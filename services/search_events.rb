@@ -13,8 +13,8 @@ class SearchEvents
   end
 
   register :call_api_to_load_event, lambda { |search_keyword|
-    kktix_org_slug = search_keyword["search"]
-        begin
+    kktix_org_slug = search_keyword['search']
+    begin
       Right(HTTP.get("#{EventWall.config.kktix_event_api}/org/#{kktix_org_slug}/event"))
     rescue
       Left(Error.new('Our servers failed - we are investigating!'))
@@ -22,12 +22,16 @@ class SearchEvents
   }
 
   register :return_api_result, lambda { |result|
-    puts '>>search_events/return_api_result'
     data = result.body
-    puts '>>search_events/return_api_result: ', data
 
     if result.status == 200
-      Right(EventsSearchResultsRepresenter.new(Event.new).from_json(data))
+      events = result.parse['events']
+      Right(
+        events.map do |event|
+          puts event
+          EventRepresenter.new(Event.new).from_json(event.to_json)
+        end
+      )
     else
       message = ErrorFlattener.new(
         ApiErrorRepresenter.new(ApiError.new).from_json(data)

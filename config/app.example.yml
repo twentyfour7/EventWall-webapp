@@ -1,0 +1,5 @@
+---
+development:
+ kktix_event_api: 'http://kktix-event-api.herokuapp.com/api/v0.1'
+test:
+ kktix_event_api: 'http://kktix-event-api.herokuapp.com/api/v0.1'
