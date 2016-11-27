@@ -1,0 +1,9 @@
+---
+development:
+ KKTIX_ORG_ID: '{kktix_org_slug}, ex: nthuion'
+ kktix_event_api: '{API_URI}/api/v0.1'
+ DATABASE_URL: ''
+test:
+ KKTIX_ORG_ID: 'nthuion'
+ kktix_event_api: '{API_URI}/api/v0.1'
+ DATABASE_URL: ''
