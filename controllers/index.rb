@@ -7,6 +7,6 @@ class EventWall < Sinatra::Base
   end
 
   post '/org/?' do
-    slim :test
+    slim :event
   end
 end

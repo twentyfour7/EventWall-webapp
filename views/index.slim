@@ -1,14 +1,27 @@
 doctype html
 html
   head
-    title Test Example
-    meta name="keywords" content="template language"
+    /! Latest compiled and minified CSS
+    link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" rel="stylesheet" /
+    link href="../static/style.css" rel="stylesheet" /
+    link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" /
+    link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /
+    meta charset="utf-8" /
+    title EventWall
+  body
+    .container
+      .page-header.text-center
+        h2 EventWall
+        h2
+          small Make your campus life more colorful
+      .col-md-6.col-md-offset-3.section
+        h4.text-center
+          | Give us some keywords that you are interested in...
+        form.section action="/org" method="POST" 
+          .input-group
+            input.form-control name="email" placeholder=("e.g. Hackathon") type="email" /
+            span.input-group-btn
+              button.btn.btn-default type="submit"  Submit
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js" 
+    script crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
 
-body
-  h1 Hi~ This is EventWall
-
-  form role="form" action="/org" method="post" id="test-post"
-    div class="wrapper"
-    button{
-    type='submit' class='submit'
-    } Press to POST

@@ -1,0 +1,13 @@
+div class="row" style="vertical-align: bottom;"
+  div class="col-xs-9"
+    h3 All Events
+    
+table class="table"
+  thead
+    tr
+      th Event Name
+  tbody
+    - @data&.groups&.each do |group|
+      tr
+        td 
+          a href="/group/#{group[:id]}" #{group[:name]}
