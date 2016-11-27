@@ -1,12 +1,17 @@
+# Event wall index controller
 class EventWall < Sinatra::Base
-
-  get "/?" do
+  get '/?' do
     slim :index
   end
 
-  post '/event/?' do
+  post '/search/?' do
     result = SearchEvents.call(params)
 
-    redirect '/'
+    if result.success?
+      puts 'success'
+      @events = result.value
+    end
+
+    slim :search
   end
 end

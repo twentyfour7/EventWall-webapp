@@ -13,9 +13,9 @@ class SearchEvents
   end
 
   register :call_api_to_load_event, lambda { |search_keyword|
-    kktix_org_slug = search_keyword["search"]
+    kktix_org_slug = search_keyword['search']
     puts '>>search_events/call_api_to_load_event: ', kktix_org_slug
-    puts "#{EventWall.config.kktix_event_api}"
+    puts EventWall.config.kktix_event_api.to_s
     begin
       Right(HTTP.get("#{EventWall.config.kktix_event_api}/org/#{kktix_org_slug}/event"))
     rescue
@@ -26,12 +26,14 @@ class SearchEvents
   register :return_api_result, lambda { |result|
     puts '>>search_events/return_api_result'
     data = result.body
-    puts '>>search_events/return_api_result: ', data
+    puts '>>search_events/return_api_result: '
 
     if result.status == 200
+      events = result.parse['events']
       Right(
-        data.each do |event|
-          EventRepresenter.new(Event.new).from_json(event)
+        events.map do |event|
+          puts event
+          EventRepresenter.new(Event.new).from_json(event.to_json)
         end
       )
     else

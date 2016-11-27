@@ -1,0 +1,25 @@
+div class="row" style="vertical-align: bottom;"
+  div class="col-xs-9"
+    h3 All Events
+
+table class="table"
+  thead
+    tr
+      th Event Name
+      th Summary
+      th Time
+      th Location
+      th More
+  tbody
+    - @events&.each do |event|
+      tr
+        td
+          p #{event.title}
+        td
+          p #{event.summary}
+        td
+          p #{event.datetime}
+        td
+          p #{event.location}
+        td
+          a> href="/event/#{event[:id]}" more
