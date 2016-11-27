@@ -8,19 +8,23 @@ html
     meta charset="utf-8" /
     title EventWall
   body
-    .container
+
+    / == slim :nav
+    .container id='html_body' style="text-align: center;"
       .page-header.text-center
         h2 EventWall
         h2
           small Make your campus life more colorful
-      .col-md-6.col-md-offset-3.row style=("margin-bottom: 50px;") 
+      .col-md-6.col-md-offset-3.row style=("margin-bottom: 50px;")
         h4.text-center
           | Give us some keywords that you are interested in...
-        form.row action="/search" method="POST" 
+        form.row action="/search" method="POST"
           .input-group
             input.form-control name="search" placeholder=("e.g. Hackathon") /
             span.input-group-btn
               button.btn.btn-default type="submit"  Submit
-      include : event
+      section
+        include :flash_bar
+        == yield
     script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"
     script crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"

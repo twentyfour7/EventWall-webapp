@@ -4,7 +4,17 @@
 class EventWall < Sinatra::Base
   extend Econfig::Shortcut
 
-  get '/search' do
-    redirect '/'
+  post '/search/?' do
+    result = SearchEvents.call(params)
+
+    if result.success?
+      @events = result.value
+      flash[:notice] = "Here's what we have for "
+    else
+      flash[:error] = result.value.message
+      redirect '/'
+    end
+
+    slim :event
   end
 end

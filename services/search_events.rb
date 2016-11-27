@@ -28,7 +28,6 @@ class SearchEvents
       events = result.parse['events']
       Right(
         events.map do |event|
-          puts event
           EventRepresenter.new(Event.new).from_json(event.to_json)
         end
       )
