@@ -7,7 +7,7 @@ table class="table"
     tr
       th Event Name
   tbody
-    - @data&.groups&.each do |group|
+    - @data&.events&.each do |event|
       tr
         td 
-          a href="/group/#{group[:id]}" #{group[:name]}
+          a href="/event/#{event[:id]}" #{event[:title]}

@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 require 'sinatra'
+require 'slim/include'
+require 'econfig'
+require 'http'
 
 require_relative 'base'
 
