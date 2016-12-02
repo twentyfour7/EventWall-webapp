@@ -1,0 +1,22 @@
+.container
+  .row
+    .media
+      .media-left.media-middle
+        img.img-circle.profile-img alt="..." src="img/rollee.jpg" /
+      .media-body
+        h4.media-heading Rollee Chen
+        | rr1515c@gmail.com
+  .row.text-center
+    ul.nav.nav-tabs.panel-tabs.section role="tablist" 
+      li.active role="presentation" 
+        a aria-controls="profile" data-toggle="tab" href="#profile" role="tab"  Profile
+      li role="presentation" 
+        a aria-controls="myevents" data-toggle="tab" href="#myevents" role="tab"  My Events
+      li role="presentation" 
+        a aria-controls="following" data-toggle="tab" href="#following" role="tab"  Following
+    /! Tab panes
+    .tab-content
+      #profile.tab-pane.active role="tabpanel"
+        include : profile 
+      #myevents.tab-pane role="tabpanel" 
+      #following.tab-pane role="tabpanel" 
