@@ -1,21 +1,66 @@
-table class="table table-striped"
-  thead
-    tr
-      th style="width:20%" Event Name
-      th style="width:40%" Summary
-      th style="width:15%" Time
-      th style="width:15%" Location
-      th style="width:10%" More
-  tbody
-    - @events&.each do |event|
-      tr
-        td
-          p #{event.title}
-        td
-          p #{event.summary}
-        td
-          p #{event.datetime}
-        td
-          p #{event.location}
-        td
-          a> href="/event/#{event[:id]}" more
+ul.nav.nav-tabs.text-center role="tablist" 
+  li.active role="presentation" 
+    a aria-controls="all" data-toggle="tab" href="#all" role="tab"  All
+  li role="presentation" 
+    a aria-controls="club" data-toggle="tab" href="#club" role="tab"  Club
+  li role="presentation" 
+    a aria-controls="lecture" data-toggle="tab" href="#lecture" role="tab"  Lecture
+  li role="presentation" 
+    a aria-controls="contest" data-toggle="tab" href="#contest" role="tab"  Contest
+/! Tab panes
+.tab-content
+  #all.tab-pane.active role="tabpanel" 
+  #club.tab-pane role="tabpanel" 
+  #lecture.tab-pane role="tabpanel" 
+  #contest.tab-pane role="tabpanel" 
+
+.row.text-center.event-block
+  - @events&.each do |event|
+    .col-md-3.col-sm-6.hero-feature
+      .thumbnail.thumbnail-club
+        span.label.label-club.pull-left 社團
+        img alt="" src="http://placehold.it/320x200" /
+        .caption
+          h3 #{event.title}
+          .activity-info
+            table.table
+              tbody
+                tr
+                  td
+                    p 
+                      i.fa.fa-calendar aria-hidden="true"
+                  td #{event.datetime.split(' ')[0]}
+                tr
+                  td
+                    p
+                     i.fa.fa-clock-o aria-hidden="true"
+                  td #{event.datetime.split(' ')[1]}
+                tr
+                  td
+                    p
+                      i.fa.fa-map-marker aria-hidden="true"
+                  td #{event.location}
+    .col-md-3.col-sm-6.hero-feature
+      .thumbnail.thumbnail-club
+        span.label.label-lecture.pull-left 講座
+        img alt="" src="http://placehold.it/320x200" /
+        .caption
+          h3 #{event.title}
+          .activity-info
+            table.table
+              tbody
+                tr
+                  td
+                    p 
+                      i.fa.fa-calendar aria-hidden="true"
+                  td #{event.datetime.split(' ')[0]}
+                tr
+                  td
+                    p
+                     i.fa.fa-clock-o aria-hidden="true"
+                  td #{event.datetime.split(' ')[1]}
+                tr
+                  td
+                    p
+                      i.fa.fa-map-marker aria-hidden="true"
+                  td #{event.location}
