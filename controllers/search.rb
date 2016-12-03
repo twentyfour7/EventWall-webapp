@@ -9,7 +9,6 @@ class EventWall < Sinatra::Base
 
     if result.success?
       @search_result = result.value
-      puts result.value
       flash[:notice] = "Here's what we have for "
     else
       flash[:error] = result.value.message

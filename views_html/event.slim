@@ -1,0 +1,23 @@
+.text-center.event-block
+  - @search_result&.events&.each do |event|
+    .col-md-3.col-sm-6.hero-feature
+      .thumbnail
+        span.label.label-club.pull-left 社團
+        img alt="" src="http://placehold.it/320x200" /
+        .caption
+          h3 #{event.title}
+          .activity-info
+            table.table
+              tbody
+                tr
+                  td
+                    i.fa.fa-calendar aria-hidden="true"
+                  td #{event.datetime.split(' ')[0]}
+                tr
+                  td
+                    i.fa.fa-clock-o aria-hidden="true"
+                  td #{event.datetime.split(' ')[1]}
+                tr
+                  td
+                    i.fa.fa-map-marker aria-hidden="true"
+                  td #{event.location}
