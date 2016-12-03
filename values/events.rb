@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-Events = Struct.new :events
+Events = Struct.new :slug, :events

@@ -1,3 +1,4 @@
+h2 #{@search_result&.slug}
 table class="table table-striped"
   thead
     tr
@@ -7,7 +8,7 @@ table class="table table-striped"
       th style="width:15%" Location
       th style="width:10%" More
   tbody
-    - @events&.each do |event|
+    - @search_result&.events&.each do |event|
       tr
         td
           p #{event.title}
