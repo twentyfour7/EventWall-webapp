@@ -18,7 +18,7 @@ html
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand href="#"  EventWall
+          a.navbar-brand href="#" EventWall
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
 
           form.navbar-form.navbar-left action="/search" method="POST"
@@ -31,6 +31,9 @@ html
             li
               a href="#"  Sign In
     include : index
+    .container
+      section
+        include :flash_bar
 
     script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
     script src="/js/main.js"
