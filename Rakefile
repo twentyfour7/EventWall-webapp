@@ -10,7 +10,7 @@ task :run do
 end
 
 Rake::TestTask.new(:spec) do |t|
-  sh 'rackup -D -p 9000'
+  # sh 'rackup -D -p 9000'
   t.pattern = 'spec/*_spec.rb'
   t.warning = false
 end
