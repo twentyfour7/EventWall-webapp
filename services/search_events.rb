@@ -5,17 +5,19 @@ class SearchEvents
   extend Dry::Monads::Either::Mixin
   extend Dry::Container::Mixin
 
-  def self.call(search_keyword)
+  def self.call(params)
     Dry.Transaction(container: self) do
       step :call_api_to_load_event
       step :return_api_result
-    end.call(search_keyword)
+    end.call(params)
   end
 
-  register :call_api_to_load_event, lambda { |search_keyword|
-    search = search_keyword['search']
+  register :call_api_to_load_event, lambda { |params|
+    search = URI.escape(params['search'], Regexp.new("[^#{URI::PATTERN::UNRESERVED}]")) if params.include? 'search'
     begin
-      Right(HTTP.get("#{EventWall.config.KKTIX_EVENT_API}/event/?search=#{search}"))
+      uri = "#{EventWall.config.KKTIX_EVENT_API}/event/"
+      uri += "?search=#{search}" unless search.nil?
+      Right(HTTP.get(uri))
     rescue
       Left(Error.new('Our servers failed - we are investigating!'))
     end
@@ -24,6 +26,7 @@ class SearchEvents
   register :return_api_result, lambda { |result|
     data = result.body
 
+    print result.status
     if result.status == 200
       events = result.parse
       Right(EventsSearchResultsRepresenter.new(Events.new).from_json(events.to_json))
