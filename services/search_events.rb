@@ -27,11 +27,6 @@ class SearchEvents
     if result.status == 200
       events = result.parse
       Right(EventsSearchResultsRepresenter.new(Events.new).from_json(events.to_json))
-      # Right(
-      #   events.map do |event|
-      #     EventRepresenter.new(Event.new).from_json(event.to_json)
-      #   end
-      # )
     else
       message = ErrorFlattener.new(
         ApiErrorRepresenter.new(ApiError.new).from_json(data)
