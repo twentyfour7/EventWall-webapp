@@ -8,6 +8,9 @@ html
     link href="/css/style.css" rel="stylesheet" /
     link crossorigin="anonymous" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet" /
   body
+    .container
+      section
+        include :flash_bar
     nav.navbar.navbar-default.navbar-fixed-top.navbar-color
       .container
         .navbar-header
@@ -31,9 +34,6 @@ html
             li
               a href="#"  Sign In
     include : index
-    .container
-      section
-        include :flash_bar
 
     script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
     script src="/js/main.js"
