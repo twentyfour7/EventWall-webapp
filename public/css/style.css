@@ -44,29 +44,25 @@ body {
     border-radius: 0px;
 }
 
+/** Carousel **/
+.event-carousel-container {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: -20px;
+}
+
+
 /** Event Box **/
 
 .thumbnail {
     padding: 0px;
-    border-radius: 0px;
-    box-shadow: 2px 2px 2px 0px rgba(221,221,221,1);
+    border-radius: 2px;
+    box-shadow: 2px 2px 2px 0px rgba(246,246,246,1);
 }
 
-/*.thumbnail-club {
-    border: 3px solid #DB2828;
+.thumbnail:hover {
+    box-shadow: 4px 4px 4px 0px rgba(230,230,230,1);
 }
-
-.thumbnail-lecture {
-    border: 3px solid #FBBD08;
-}
-
-.thumbnail-contest {
-    border: 3px solid #2185D0;
-}
-
-.thumbnail-academic {
-    border: 3px solid #21BA45;
-}*/
 
 .thumbnail>img {
     width: 100%;
@@ -102,7 +98,6 @@ body {
 }
 
 .activity-info {
-    margin-bottom: 10px;
     text-align: left;
     padding-left: 15px;
     padding-right: 15px;
@@ -114,12 +109,23 @@ body {
 
 .caption h3 {
     margin-top: 10px;
+    font-size: 20px;
+    height: 50px;
+}
+
+.table {
+    margin-bottom: 5px;
 }
 
 .table>tbody>tr>td {
     padding: 3px;
     border-top: none;
 }
+
+.justify {
+    height: 46px;
+}
+
 
 /** Event Type Tabs **/
 
