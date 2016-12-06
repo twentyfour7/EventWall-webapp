@@ -10,14 +10,14 @@
             table.table
               tbody
                 tr
-                  td
+                  td 
                     i.fa.fa-calendar aria-hidden="true"
-                  td #{event.datetime.split(' ')[0]}
+                  td #{event.date}
                 tr
-                  td
+                  td 
                     i.fa.fa-clock-o aria-hidden="true"
-                  td #{event.datetime.split(' ')[1]}
-                tr
+                  td #{event.time}
+                tr.justify
                   td
                     i.fa.fa-map-marker aria-hidden="true"
                   td #{event.location}
