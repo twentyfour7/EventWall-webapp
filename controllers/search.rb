@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
-# EventWall index controller
+# EventWall search controller
 class EventWall < Sinatra::Base
-  get '/?' do
+  extend Econfig::Shortcut
+
+  post '/search/?' do
     result = SearchEvents.call(params)
 
     if result.success?
