@@ -50,7 +50,67 @@ a:hover, a:focus {
     border-radius: 0 2px 2px;
 }
 
+/** Modals **/
+
+.modal-header {
+    border-bottom: none;
+    text-align: center;
+}
+
+.btn {
+    border-radius: 2px;
+}
+
+.fb-button {
+    background-color: #3b5998;
+    font-size: 14px;
+    border: none;
+    color: #fff; 
+}
+
+.fb-button:hover {
+    background-color: #446CB3;
+    border: none;
+    color: #fff; 
+}
+
+.sign-button {
+    background-color: #ccc;
+    font-size: 14px;
+    border: none;
+    color: #000; 
+}
+
+.btn-icon {
+    margin-right: 10px;
+}
+
+.divider {
+    margin-top: 2px;
+}
+
+.divider span {
+    background-color: #fff;
+    color: #a3a3a7;
+    display: block;
+    margin: -40px auto 0;
+    width: 50px;
+    text-align: center;
+}
+
+.divider p {
+    margin: 10px 0 10px;
+}
+
+hr {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #ffffff;
+}
+
 /** Carousel **/
+
 .event-carousel-container {
     padding-left: 0;
     padding-right: 0;
@@ -152,6 +212,10 @@ a:hover, a:focus {
 
 a {
     color: #555;
+}
+
+a:hover {
+    color: #949494;
 }
 
 .section {
@@ -261,3 +325,27 @@ a {
     padding-left: 15px !important;
 }
 
+/** Footer **/
+
+footer {
+    padding: 30px 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.social-buttons > li > a {
+    display: block;
+    background-color: #777;
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    font-size: 15px;
+    line-height: 30px;
+    color: #fff;
+    outline: 0;
+    transition: all .3s;
+}
+
+.social-buttons > li > a:hover {
+    background-color: #949494;
+}
