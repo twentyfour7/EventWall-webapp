@@ -1,33 +1,36 @@
+- event = @event
 .container
-  .thumbnail.thumbnail-ec-big
-    img.img-responsive alt="" src="http://placehold.it/800x300" /
-    .event-title
-      h4 EventTitle
-    .caption-full.caption-ec-big
-      .event-info.event-info-big
-        table.table.event-table
-          tbody
-            tr
-              td
-                i.fa.fa-calendar aria-hidden="true" 
-              td.event-info-td EventDate
-            tr
-              td
-                i.fa.fa-clock-o aria-hidden="true" 
-              td.event-info-td EventTime
-            tr
-              td
-                i.fa.fa-map-marker aria-hidden="true" 
-              td.event-info-td EventLocation
-            tr
-              td
-                i.fa.fa-sitemap aria-hidden="true" 
-              td.event-info-td EventOrganizer
-            tr
-              td
-                i.fa.fa-link aria-hidden="true" 
-              td.event-info-td
-                a href="#"  EventUrl
-      hr/
-      .event-summary
-        p EventSummary
+  .event-wrapper
+    .thumbnail.thumbnail-ec-big
+      img.img-responsive alt="" src="http://placehold.it/800x300" /
+      .event-title
+        h4 #{event.title}
+      .caption-full.caption-ec-big
+        .event-info.event-info-big
+          table.table.event-table
+            tbody
+              tr
+                td
+                  i.fa.fa-calendar aria-hidden="true" 
+                td.event-info-td #{event.date}
+              tr
+                td
+                  i.fa.fa-clock-o aria-hidden="true" 
+                td.event-info-td #{event.time}
+              tr
+                td
+                  i.fa.fa-map-marker aria-hidden="true" 
+                td.event-info-td #{event.location}
+              tr
+                td
+                  i.fa.fa-sitemap aria-hidden="true" 
+                td.event-info-td 
+                  a href="/org/#{event.organization}" target="_blank"  #{event.organization}
+              tr
+                td
+                  i.fa.fa-link aria-hidden="true" 
+                td.event-info-td
+                  a href="#{event.url}" target="_blank"  #{event.url}
+        hr/
+        .event-summary
+          p #{event.summary}

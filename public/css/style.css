@@ -276,6 +276,14 @@ a:hover {
 }
 
 /** Event **/
+
+.event-wrapper {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
 .thumbnail-ec-big {
     padding: 0px;
     border-radius: 2px;
@@ -329,7 +337,7 @@ a:hover {
 
 footer {
     padding: 30px 0;
-    background-color: #f8f8f8;
+    background-color: #f1f0f0;
     text-align: center;
 }
 
