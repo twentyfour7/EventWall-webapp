@@ -14,7 +14,6 @@ class EventWall < Sinatra::Base
         name = org_detail.name,
         uri = org_detail.uri
       )
-      # @event = EventDetailView.new(event_detail)
     else
       flash[:error] = result.value.message
       redirect '/'
