@@ -1,12 +1,14 @@
 .text-center.events-block
   - @search_result&.events&.each do |event|
     .col-md-3.col-sm-6.hero-feature.event-card
-      .thumbnail
+      .thumbnail.thumbnail-ec
         span.label.label-club.pull-left 社團
-        img alt="" src="http://placehold.it/320x200" /
-        .caption
-          h3 #{event.title}
-          .activity-info
+        a href="/event/#{event.id}" target="_blank"
+          img alt="" src="http://placehold.it/320x200" /
+        .caption.caption-ec
+          a href="/event/#{event.id}" target="_blank"
+            h3 #{event.title}
+          .event-info
             table.table
               tbody
                 tr

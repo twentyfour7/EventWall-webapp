@@ -1,0 +1,48 @@
+#signUpModal.modal.fade aria-labelledby="signUpModalLabel" role="dialog" tabindex="-1" 
+  .modal-dialog role="document" 
+    .modal-content
+      .modal-header
+        button.close aria-label="Close" data-dismiss="modal" type="button" 
+          span aria-hidden="true"  ×
+        h4#signUpModalLabel.modal-title Sign Up
+      .modal-body
+        .form-group
+          a.btn.btn-default.btn-lg.btn-block.fb-button href="#" type="button" 
+            i.fa.fa-facebook.fa-lg.btn-icon aria-hidden="true" 
+            | Sign Up with Facebook
+        .form-group.divider.text-center
+          hr/
+          span OR
+          p Sign Up with Email Address
+        .form-group
+          input#inputUsrname.form-control placeholder="Username" type="text" /
+        .form-group
+          input#inputEmail.form-control placeholder="Email" type="email" /
+        .form-group
+          input#inputPassword.form-control placeholder="Password" type="password" /
+        .form-group
+          a.btn.btn-default.btn-lg.btn-block.sign-button href="#" type="button" 
+            | Sign Up
+#signInModal.modal.fade aria-labelledby="signUpModalLabel" role="dialog" tabindex="-1" 
+  .modal-dialog role="document" 
+    .modal-content
+      .modal-header
+        button.close aria-label="Close" data-dismiss="modal" type="button" 
+          span aria-hidden="true"  ×
+        h4#signInModalLabel.modal-title Sign In
+      .modal-body
+        .form-group
+          a.btn.btn-default.btn-lg.btn-block.fb-button href="#" type="button" 
+            i.fa.fa-facebook.fa-lg.btn-icon aria-hidden="true" 
+            | Sign In with Facebook
+        .form-group.divider.text-center
+          hr/
+          span OR
+          p Sign In with Email Address
+        .form-group
+          input#inputEmail.form-control placeholder=("Email or Username") type="email" /
+        .form-group
+          input#inputPassword.form-control placeholder="Password" type="password" /
+        .form-group
+          a.btn.btn-default.btn-lg.btn-block.sign-button href="#" type="button" 
+            | Sign In
