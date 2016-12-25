@@ -7,30 +7,31 @@
         h4 #{event.title}
       .caption-full.caption-ec-big
         .event-info.event-info-big
-          table.table.event-table
-            tbody
-              tr
-                td
-                  i.fa.fa-calendar aria-hidden="true" 
-                td.event-info-td #{event.date}
-              tr
-                td
-                  i.fa.fa-clock-o aria-hidden="true" 
-                td.event-info-td #{event.time}
-              tr
-                td
-                  i.fa.fa-map-marker aria-hidden="true" 
-                td.event-info-td #{event.location}
-              tr
-                td
-                  i.fa.fa-sitemap aria-hidden="true" 
-                td.event-info-td 
-                  a href="/org/#{event.org_id}" target="_blank"  #{event.org_name}
-              tr
-                td
-                  i.fa.fa-link aria-hidden="true" 
-                td.event-info-td
-                  a href="#{event.url}" target="_blank"  #{event.url}
+          .table-responsive.event-table-responsive
+            table.table.event-table
+              tbody
+                tr
+                  td
+                    i.fa.fa-calendar aria-hidden="true" 
+                  td.event-info-td #{event.date}
+                tr
+                  td
+                    i.fa.fa-clock-o aria-hidden="true" 
+                  td.event-info-td #{event.time}
+                tr
+                  td
+                    i.fa.fa-map-marker aria-hidden="true" 
+                  td.event-info-td #{event.location}
+                tr
+                  td
+                    i.fa.fa-sitemap aria-hidden="true" 
+                  td.event-info-td 
+                    a href="/org/#{event.org_id}"  #{event.org_name}
+                tr
+                  td
+                    i.fa.fa-link aria-hidden="true" 
+                  td.event-info-td
+                    a href="#{event.url}" target="_blank"  #{event.url}
         hr/
         .event-summary
           p #{event.summary}

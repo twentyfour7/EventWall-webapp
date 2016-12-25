@@ -178,12 +178,15 @@ hr {
     font-size: 20px;
     height: 50px;
 }
+.event-table-responsive {
+    border: none;
+}
 
-.table {
+.event-table {
     margin-bottom: 5px;
 }
 
-.table>tbody>tr>td {
+.event-table>tbody>tr>td {
     padding: 3px;
     border-top: none;
 }
@@ -278,8 +281,8 @@ a:hover {
 /** Event **/
 
 .event-wrapper {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
     margin-top: 20px;
     margin-bottom: 50px;
 }
@@ -339,6 +342,7 @@ footer {
     padding: 30px 0;
     background-color: #f1f0f0;
     text-align: center;
+    margin-top: 20px;
 }
 
 .social-buttons > li > a {

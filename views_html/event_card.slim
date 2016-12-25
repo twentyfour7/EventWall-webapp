@@ -3,23 +3,24 @@
     .col-md-3.col-sm-6.hero-feature.event-card
       .thumbnail.thumbnail-ec
         span.label.label-club.pull-left 社團
-        a href="/event/#{event.id}" target="_blank"
+        a href="/event/#{event.id}"
           img alt="" src="http://placehold.it/320x200" /
         .caption.caption-ec
-          a href="/event/#{event.id}" target="_blank"
+          a href="/event/#{event.id}"
             h3 #{event.title}
           .event-info
-            table.table
-              tbody
-                tr
-                  td 
-                    i.fa.fa-calendar aria-hidden="true"
-                  td #{event.date}
-                tr
-                  td 
-                    i.fa.fa-clock-o aria-hidden="true"
-                  td #{event.time}
-                tr.justify
-                  td
-                    i.fa.fa-map-marker aria-hidden="true"
-                  td #{event.location}
+            .table-responsive.event-table-responsive
+              table.table.event-table
+                tbody
+                  tr
+                    td 
+                      i.fa.fa-calendar aria-hidden="true"
+                    td #{event.date}
+                  tr
+                    td 
+                      i.fa.fa-clock-o aria-hidden="true"
+                    td #{event.time}
+                  tr.justify
+                    td
+                      i.fa.fa-map-marker aria-hidden="true"
+                    td #{event.location}
