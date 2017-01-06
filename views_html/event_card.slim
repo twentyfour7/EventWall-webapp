@@ -2,7 +2,7 @@
   - @search_result&.events&.each do |event|
     .col-md-3.col-sm-6.hero-feature.event-card
       .thumbnail.thumbnail-ec
-        span.label.label-club.pull-left 社團
+        span.label.pull-left.label-club #{event.event_type}
         a href="/event/#{event.id}"
           img alt="" src="http://placehold.it/320x200" /
         .caption.caption-ec

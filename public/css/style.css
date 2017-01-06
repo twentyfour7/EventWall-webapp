@@ -38,7 +38,7 @@ a:hover, a:focus {
 
 .navbar-eventwall .navbar-nav>li>a:focus, .navbar-eventwall .navbar-nav>li>a:hover {
     color: #fff;
-    background-color: #428bca !important;
+    background-color: #258cd1 !important;
 }
 
 .navbar-form .input-group >.search-bar {
@@ -145,18 +145,22 @@ hr {
     letter-spacing: 3px;
     /*padding: .2em .6em 0em;*/
     opacity: 0.8;
+    padding-top: 5px;
 }
 
 .label-club {
-    background-color: #e74c3c;
+    /*background-color: #e74c3c;*/
+    background-color: #db3445;
 }
 
 .label-lecture {
-    background-color: #f1c40f;
+    /*background-color: #f1c40f;*/
+    background-color: #db7734;
 }
 
 .label-contest {
-    background-color: #2185D0;
+    /*background-color: #2185D0;*/
+    background-color: #34db77;
 }
 
 .label-academic {

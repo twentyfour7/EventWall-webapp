@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 require 'date'
-require_relative 'event'
+require_relative 'event_card'
 
 class EventCardView
   MAX_TITLE_LEN = 22
@@ -35,7 +35,8 @@ class EventCardView
       title = event_title,
       date = event_date,
       time = event_time,
-      location = event_location
+      location = event_location,
+      event_type = event.event_type
     )
   end
 
