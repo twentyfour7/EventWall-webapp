@@ -2,6 +2,7 @@
 require 'date'
 require_relative 'event_card'
 
+# event card view
 class EventCardView
   MAX_TITLE_LEN = 22
   MAX_LOC_LEN = 25
@@ -19,7 +20,7 @@ class EventCardView
     new_events = events&.map do |event|
       formatted_event(event)
     end
-    new_events = new_events.select { |event| event.date > Date.today.to_date }
+    # new_events = new_events.select { |event| event.date > Date.today.to_date }
     new_events = new_events.sort_by(&:date).reverse
     new_events
   end
