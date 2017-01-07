@@ -1,0 +1,20 @@
+.container
+  ul.nav.nav-tabs.text-center.section role="tablist"
+    li.active role="presentation"
+      a aria-controls="all" data-toggle="tab" href="#all" role="tab"  All
+    li role="presentation"
+      a aria-controls="club" data-toggle="tab" href="#club" role="tab"  Club
+    li role="presentation"
+      a aria-controls="lecture" data-toggle="tab" href="#lecture" role="tab"  Lecture
+    li role="presentation"
+      a aria-controls="contest" data-toggle="tab" href="#contest" role="tab"  Contest
+  /! Tab panes
+  .tab-content
+    #all.tab-pane.active role="tabpanel"
+      include : event_card
+    #club.tab-pane role="tabpanel"
+      include : event_card_club
+    #lecture.tab-pane role="tabpanel"
+      include : event_card_lecture
+    #contest.tab-pane role="tabpanel"
+      include : event_card_contest
