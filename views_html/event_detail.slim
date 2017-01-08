@@ -2,35 +2,53 @@
 .container
   .event-wrapper
     .thumbnail.thumbnail-ec-big
-      img.img-responsive alt="" src="http://placehold.it/800x300" /
-      .event-title
-        h4 #{event.title}
+      - if event.cover_img_url
+        img.img-responsive alt="" src="#{event.cover_img_url}"
+      - else
+        img.img-responsive alt="" src="http://placehold.it/800x300" /
+      - if event.event_type == "社團"
+        .event-title.label-club
+          h4 #{event.title}
+      - if event.event_type == "學術"
+        .event-title.label-academic
+          h4 #{event.title}
+      - if event.event_type == "競賽"
+        .event-title.label-contest
+          h4 #{event.title}
+      - if event.event_type == "藝文"
+        .event-title.label-art
+          h4 #{event.title}
+      - if event.event_type == "徵才"
+        .event-title.label-recruit
+          h4 #{event.title}
       .caption-full.caption-ec-big
         .event-info.event-info-big
-          table.table.event-table
-            tbody
-              tr
-                td
-                  i.fa.fa-calendar aria-hidden="true" 
-                td.event-info-td #{event.date}
-              tr
-                td
-                  i.fa.fa-clock-o aria-hidden="true" 
-                td.event-info-td #{event.time}
-              tr
-                td
-                  i.fa.fa-map-marker aria-hidden="true" 
-                td.event-info-td #{event.location}
-              tr
-                td
-                  i.fa.fa-sitemap aria-hidden="true" 
-                td.event-info-td 
-                  a href="/org/#{event.org_id}" target="_blank"  #{event.org_name}
-              tr
-                td
-                  i.fa.fa-link aria-hidden="true" 
-                td.event-info-td
-                  a href="#{event.url}" target="_blank"  #{event.url}
+          .table-responsive.event-table-responsive
+            table.table.event-table
+              tbody
+                tr
+                  td
+                    i.fa.fa-calendar aria-hidden="true" 
+                  td.event-info-td #{event.date}
+                tr
+                  td
+                    i.fa.fa-clock-o aria-hidden="true" 
+                  td.event-info-td #{event.time}
+                tr
+                  td
+                    i.fa.fa-map-marker aria-hidden="true" 
+                  td.event-info-td #{event.location}
+                tr
+                  td
+                    i.fa.fa-sitemap aria-hidden="true" 
+                  td.event-info-td 
+                    a href="/org/#{event.org_id}"  #{event.org_name}
+                tr
+                  td
+                    i.fa.fa-link aria-hidden="true" 
+                  td.event-info-td
+                    a href="#{event.url}" target="_blank"  #{event.url}
         hr/
         .event-summary
-          p #{event.summary}
+          - event.summary.split("\n").each do |para|
+            p #{para}

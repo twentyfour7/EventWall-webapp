@@ -30,7 +30,8 @@ class GetOrgDetail
     print result.status
     if result.status == 200
       org = result.parse
-      Right(OrganizationRepresenter.new(Organization.new).from_json(org.to_json))
+      Right(OrganizationEventsRepresenter.new(OrganizationEvents.new).from_json(org.to_json))
+      # Right(OrganizationEventsRepresenter.new(org.to_json))
     else
       message = ErrorFlattener.new(
         ApiErrorRepresenter.new(ApiError.new).from_json(data)

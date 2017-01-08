@@ -15,8 +15,7 @@ class GetEventDetail
   register :call_api_to_get_event, lambda { |params|
     event_id = params[:event_id]
     begin
-      uri = "#{EventWall.config.KKTIX_EVENT_API}/event/detail/"
-      uri += event_id
+      uri = "#{EventWall.config.KKTIX_EVENT_API}/event/detail/#{event_id}"
       puts uri
       Right(HTTP.get(uri))
     rescue

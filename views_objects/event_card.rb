@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 require 'date'
-require_relative 'event'
+require_relative 'event_card'
 
+# event card view
 class EventCardView
   MAX_TITLE_LEN = 22
   MAX_LOC_LEN = 25
@@ -19,23 +20,29 @@ class EventCardView
     new_events = events&.map do |event|
       formatted_event(event)
     end
-    new_events = new_events.select { |event| event.date > DateTime.now.to_date }
-    new_events = new_events.sort_by { |event| event.date }.reverse
+    new_events = new_events.select { |event| event.date > Date.today.to_date-31 }
+    new_events = new_events.sort_by(&:date).reverse
+    new_events
   end
 
   def formatted_event(event) # :event_title, :date, :time, :location, :event_type
     event_id = event.id
-    event_title = shortened(event.title, MAX_TITLE_LEN)
+    # event_title = shortened(event.title, MAX_TITLE_LEN)
+    event_title = event.title
     # event_date = event.datetime.split(' ')[0]
-    event_date = DateTime.strptime(event.datetime.split(' ')[0], '%Y/%m/%d').to_date
+    event_date = Date.parse(event.datetime.split(' ')[0]).to_date
     event_time = event.datetime.split(' ')[1]
-    event_location = shortened(event.location.split('/')[0], MAX_LOC_LEN)
+    event_location = shortened(event.location.split('/')[0], MAX_LOC_LEN) if event.location
+    cover_img_url = nil
+    cover_img_url = event.cover_img_url if event.respond_to? 'cover_img_url'
     EventView.new(
       id = event_id,
       title = event_title,
       date = event_date,
       time = event_time,
-      location = event_location
+      location = event_location,
+      event_type = event.event_type,
+      cover_img_url = cover_img_url
     )
   end
 

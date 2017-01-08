@@ -15,6 +15,6 @@ class EventWall < Sinatra::Base
       redirect '/'
     end
 
-    slim :index
+    slim :events
   end
 end
