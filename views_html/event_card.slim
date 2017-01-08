@@ -2,16 +2,18 @@
   - @search_result&.events&.each do |event|
     .col-md-3.col-sm-6.hero-feature.event-card
       .thumbnail.thumbnail-ec
-        - if event.event_type == "社團"
+        - if event.event_type == "Club"
           span.label.pull-left.label-club #{event.event_type}
-        - if event.event_type == "學術"
+        - if event.event_type == "Academic"
           span.label.pull-left.label-academic #{event.event_type}
-        - if event.event_type == "競賽"
+        - if event.event_type == "Contest"
           span.label.pull-left.label-contest #{event.event_type}
-        - if event.event_type == "藝文"
+        - if event.event_type == "Art"
           span.label.pull-left.label-art #{event.event_type}
-        - if event.event_type == "徵才"
+        - if event.event_type == "Recruit"
           span.label.pull-left.label-recruit #{event.event_type}
+        - if event.event_type == "Community"
+          span.label.pull-left.label-community #{event.event_type}
         a href="/event/#{event.id}"
           img alt="" src="http://placehold.it/320x200" /
         .caption.caption-ec

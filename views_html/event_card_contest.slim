@@ -1,6 +1,6 @@
 .text-center.events-block
   - @search_result&.events&.each do |event|
-    - if event.event_type == "競賽"
+    - if event.event_type == "Contest"
       .col-md-3.col-sm-6.hero-feature.event-card
         .thumbnail.thumbnail-ec
           span.label.pull-left.label-contest #{event.event_type}

@@ -20,8 +20,9 @@ class EventCardView
     new_events = events&.map do |event|
       formatted_event(event)
     end
-    new_events = new_events.select { |event| event.date > Date.today.to_date-31 }
+    new_events = new_events.select { |event| event.date > Date.today.to_date-15 }
     new_events = new_events.sort_by(&:date).reverse
+    new_events = new_events[0..19]
     new_events
   end
 
@@ -30,8 +31,12 @@ class EventCardView
     # event_title = shortened(event.title, MAX_TITLE_LEN)
     event_title = event.title
     # event_date = event.datetime.split(' ')[0]
-    event_date = Date.parse(event.datetime.split(' ')[0]).to_date
-    event_time = event.datetime.split(' ')[1]
+    puts event_title
+    puts event.datetime
+    event_date = Date.parse(event.datetime&.split(' ')[0]).to_date
+    event_time = "08:00"
+    event_time = event.datetime&.split(' ')[1] if event.datetime&.split(' ')[1]
+    event_location = "國立清華大學"
     event_location = shortened(event.location.split('/')[0], MAX_LOC_LEN) if event.location
     cover_img_url = nil
     cover_img_url = event.cover_img_url if event.respond_to? 'cover_img_url'
