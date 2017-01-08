@@ -12,6 +12,8 @@ class EventWall < Sinatra::Base
       org_result = GetOrgDetail.call(org_id: event_detail.organization_id.to_s)
       event_date = Date.parse(event_detail.datetime.split(' ')[0]).to_date
       event_time = event_detail.datetime.split(' ')[1]
+      cover_img_url = nil
+      cover_img_url = event_detail.cover_img_url if event_detail.respond_to? 'cover_img_url'
       # event_date = event_detail.datetime.nil? ? '' : DateTime.strptime(event_detail.datetime.split(' ')[0].sub('/', '-'), '%Y-%m-%d').to_date
       # event_time = event_detail.datetime.nil? ? '' : event_detail.datetime.split(' ')[1]
 
@@ -25,7 +27,8 @@ class EventWall < Sinatra::Base
         summary = event_detail.summary,
         url = event_detail.url,
         org_id = event_detail.organization_id,
-        org_name = org_result.value.name
+        org_name = org_result.value.organization.name,
+        cover_img_url = cover_img_url
       )
     else
       flash[:error] = event_result.value.message

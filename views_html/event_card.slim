@@ -4,10 +4,14 @@
       .thumbnail.thumbnail-ec
         - if event.event_type == "社團"
           span.label.pull-left.label-club #{event.event_type}
-        - if event.event_type == "講座"
-          span.label.pull-left.label-lecture #{event.event_type}
+        - if event.event_type == "學術"
+          span.label.pull-left.label-academic #{event.event_type}
         - if event.event_type == "競賽"
           span.label.pull-left.label-contest #{event.event_type}
+        - if event.event_type == "藝文"
+          span.label.pull-left.label-art #{event.event_type}
+        - if event.event_type == "徵才"
+          span.label.pull-left.label-recruit #{event.event_type}
         a href="/event/#{event.id}"
           img alt="" src="http://placehold.it/320x200" /
         .caption.caption-ec

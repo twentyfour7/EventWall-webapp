@@ -1,9 +1,9 @@
 .text-center.events-block
   - @search_result&.events&.each do |event|
-    - if event.event_type == "講座"
+    - if event.event_type == "學術"
       .col-md-3.col-sm-6.hero-feature.event-card
         .thumbnail.thumbnail-ec
-          span.label.pull-left.label-lecture #{event.event_type}
+          span.label.pull-left.label-academic #{event.event_type}
           a href="/event/#{event.id}"
             img alt="" src="http://placehold.it/320x200" /
           .caption.caption-ec

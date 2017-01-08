@@ -115,8 +115,30 @@ hr {
     padding-left: 0;
     padding-right: 0;
     margin-top: -20px;
+    height: 400px;
 }
 
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    -o-background-size: contain;
+    /*background-size: 10   00px 400px;*/
+    background-repeat: no-repeat;
+}
 
 /** Event Card **/
 
@@ -152,7 +174,7 @@ hr {
     background-color: #db3445;
 }
 
-.label-lecture {
+.label-academic {
     /*background-color: #f1c40f;*/
     background-color: #db7734;
 }
@@ -162,8 +184,12 @@ hr {
     background-color: #34db77;
 }
 
-.label-academic {
-    background-color: #21BA45;
+.label-art {
+    background-color: #9b59b6;
+}
+
+.label-recruit {
+    background-color: #34495e;
 }
 
 .event-info {
@@ -178,8 +204,13 @@ hr {
 
 .caption-ec h3 {
     margin-top: 10px;
-    font-size: 20px;
-    height: 50px;
+    font-size: 18px;
+    height: 39px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 .event-table-responsive {
     border: none;

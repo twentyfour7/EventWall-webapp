@@ -2,15 +2,24 @@
 .container
   .event-wrapper
     .thumbnail.thumbnail-ec-big
-      img.img-responsive alt="" src="http://placehold.it/800x300" /
+      - if event.cover_img_url
+        img.img-responsive alt="" src="#{event.cover_img_url}"
+      - else
+        img.img-responsive alt="" src="http://placehold.it/800x300" /
       - if event.event_type == "社團"
         .event-title.label-club
           h4 #{event.title}
-      - if event.event_type == "講座"
-        .event-title.label-lecture
+      - if event.event_type == "學術"
+        .event-title.label-academic
           h4 #{event.title}
       - if event.event_type == "競賽"
         .event-title.label-contest
+          h4 #{event.title}
+      - if event.event_type == "藝文"
+        .event-title.label-art
+          h4 #{event.title}
+      - if event.event_type == "徵才"
+        .event-title.label-recruit
           h4 #{event.title}
       .caption-full.caption-ec-big
         .event-info.event-info-big
@@ -41,4 +50,5 @@
                     a href="#{event.url}" target="_blank"  #{event.url}
         hr/
         .event-summary
-          p #{event.summary}
+          - event.summary.split("\n").each do |para|
+            p #{para}
