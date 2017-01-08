@@ -6,20 +6,23 @@
         img.img-responsive alt="" src="#{event.cover_img_url}"
       - else
         img.img-responsive alt="" src="http://placehold.it/800x300" /
-      - if event.event_type == "社團"
+      - if event.event_type == "Club"
         .event-title.label-club
           h4 #{event.title}
-      - if event.event_type == "學術"
+      - if event.event_type == "Academic"
         .event-title.label-academic
           h4 #{event.title}
-      - if event.event_type == "競賽"
+      - if event.event_type == "Contest"
         .event-title.label-contest
           h4 #{event.title}
-      - if event.event_type == "藝文"
+      - if event.event_type == "Art"
         .event-title.label-art
           h4 #{event.title}
-      - if event.event_type == "徵才"
+      - if event.event_type == "Recruit"
         .event-title.label-recruit
+          h4 #{event.title}
+      - if event.event_type == "Community"
+        .event-title.label-community
           h4 #{event.title}
       .caption-full.caption-ec-big
         .event-info.event-info-big
@@ -41,8 +44,7 @@
                 tr
                   td
                     i.fa.fa-sitemap aria-hidden="true" 
-                  td.event-info-td 
-                    a href="/org/#{event.org_id}"  #{event.org_name}
+                  td.event-info-td #{event.org_name}
                 tr
                   td
                     i.fa.fa-link aria-hidden="true" 

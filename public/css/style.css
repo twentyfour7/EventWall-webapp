@@ -164,7 +164,7 @@ hr {
     height: 25px;
     width: 80px;
     font-size: 100%;
-    letter-spacing: 3px;
+    /*letter-spacing: 3px;*/
     /*padding: .2em .6em 0em;*/
     padding-top: 5px;
 }
@@ -190,6 +190,10 @@ hr {
 
 .label-recruit {
     background-color: #34495e;
+}
+
+.label-community {
+    background-color: #f1c40f;
 }
 
 .event-info {
