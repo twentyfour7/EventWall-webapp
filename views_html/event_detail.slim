@@ -3,8 +3,15 @@
   .event-wrapper
     .thumbnail.thumbnail-ec-big
       img.img-responsive alt="" src="http://placehold.it/800x300" /
-      .event-title
-        h4 #{event.title}
+      - if event.event_type == "社團"
+        .event-title.label-club
+          h4 #{event.title}
+      - if event.event_type == "講座"
+        .event-title.label-lecture
+          h4 #{event.title}
+      - if event.event_type == "競賽"
+        .event-title.label-contest
+          h4 #{event.title}
       .caption-full.caption-ec-big
         .event-info.event-info-big
           .table-responsive.event-table-responsive

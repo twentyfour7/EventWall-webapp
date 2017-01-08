@@ -12,7 +12,8 @@ class EventWall < Sinatra::Base
       org_result = GetOrgDetail.call({:org_id => event_detail.organization_id.to_s})
       event_date = DateTime.strptime(event_detail.datetime.split(' ')[0], '%Y/%m/%d').to_date
       event_time = event_detail.datetime.split(' ')[1]
-      
+      # event_date = event_detail.datetime.nil? ? '' : DateTime.strptime(event_detail.datetime.split(' ')[0].sub('/', '-'), '%Y-%m-%d').to_date
+      # event_time = event_detail.datetime.nil? ? '' : event_detail.datetime.split(' ')[1]
       @event = EventView.new(
         id = event_detail.id,
         title = event_detail.title,

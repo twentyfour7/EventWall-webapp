@@ -144,7 +144,6 @@ hr {
     font-size: 100%;
     letter-spacing: 3px;
     /*padding: .2em .6em 0em;*/
-    opacity: 0.8;
     padding-top: 5px;
 }
 
@@ -308,10 +307,8 @@ a:hover {
 }
 
 .event-title {
-    background-color: #e74c3c;
     color: #fff;
     padding: 15px 15px 15px 25px;
-    opacity: 0.8;
     margin-bottom: 20px;
     width: 100%
 }
