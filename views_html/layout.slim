@@ -28,10 +28,10 @@ html
                 span.input-group-btn
                   button.btn.btn-default.search-btn aria-label="search" type="submit"
                     span.glyphicon.glyphicon-search
-          ul.nav.navbar-nav.navbar-right data-target="#signInModal" data-toggle="modal" 
+          ul.nav.navbar-nav.navbar-right data-target="#signInModal" data-toggle="modal"
             li
               a href="#"  Sign In
-          ul.nav.navbar-nav.navbar-right data-target="#signUpModal" data-toggle="modal" 
+          ul.nav.navbar-nav.navbar-right data-target="#signUpModal" data-toggle="modal"
             li
               a href="#"  Sign Up
     == yield
@@ -47,12 +47,17 @@ html
                 a href="#"  target="_blank"
                   i.fa.fa-facebook
               li
-                a href="#" 
+                a href="#"
                   i.fa.fa-envelope
         p.copyright.text-muted Copyright © EventWall 2016. All Rights Reserved
 
     script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"
     script src="/js/main.js"
     script crossorigin="anonymous" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+
+    script src="http://localhost:9292/faye.js"
+    javascript:
+      var client = new Faye.Client('http://localhost:9292/faye');
+
 
 include : sign_modal

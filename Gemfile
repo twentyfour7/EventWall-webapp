@@ -19,6 +19,8 @@ gem 'dry-validation'
 gem 'multi_json'
 gem 'roar'
 
+gem 'faye'
+
 group :development do
   gem 'rerun'
 
